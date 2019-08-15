@@ -141,7 +141,13 @@ export class DashboardComponent implements OnInit {
       $("#header .menu-modulos .menu-modulosInner").stop(true,true).animate({paddingLeft:0},_timer);
       $("#conteudo .conteudo-inner").stop(true,true).animate({paddingLeft:0},_timer);
   
-      this. hideBackgroundMenuMobile();
+      //this. hideBackgroundMenuMobile();
+
+      $('.menu-mobile-background').removeClass("on");
+      $('.menu-mobile-background').stop(true,true).animate({opacity:0},function(){
+          $('.menu-mobile-background').stop(true,true).hide();
+          $('.menu-mobile-background').removeAttr('style');
+      });
               }
           }
       }
@@ -150,7 +156,12 @@ export class DashboardComponent implements OnInit {
       {
           if($('.menu-mobile-background').hasClass("on"))
           {
-            this. hideBackgroundMenuMobile ();
+           // this. hideBackgroundMenuMobile ();
+           $('.menu-mobile-background').removeClass("on");
+           $('.menu-mobile-background').stop(true,true).animate({opacity:0},function(){
+               $('.menu-mobile-background').stop(true,true).hide();
+               $('.menu-mobile-background').removeAttr('style');
+           });
           }
       }
       else
